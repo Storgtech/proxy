@@ -21,7 +21,7 @@ RUN chmod +x /usr/local/bin/generate-certs.sh && \
     mv /certs/proxy.whatsapp.net.pem /etc/haproxy/ssl/proxy.whatsapp.net.pem && \
     chown -R haproxy:haproxy /etc/haproxy/
 WORKDIR /
-
+ENV PUBLIC_IP=20.5.123.190
 # Copy the public-ip setting + sshd startup script
 COPY --chown=haproxy:haproxy src/set_public_ip_and_start.sh /usr/local/bin/set_public_ip_and_start.sh
 RUN chmod +x /usr/local/bin/set_public_ip_and_start.sh
